@@ -7,3 +7,8 @@ data Complex : Type -> Type where
   (:+) : t -> t -> Complex t
 
 public export infixl 6 :+
+
+public export
+add : Num t => Complex t -> Complex t -> Complex t
+add (a :+ b) (c :+ d) = (a + c) :+ (b + d)
+

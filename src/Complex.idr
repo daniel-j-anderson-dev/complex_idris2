@@ -23,3 +23,13 @@ normSquared (a :+ b) = (a * a) + (b * b)
 public export
 map : (t -> u) -> Complex t -> Complex u
 map f (a :+ b) = f a :+ f b
+
+public export
+fromPolar : Num t => Cast t Double => t -> t -> Complex Double
+fromPolar r theta = 
+  let r'     = cast r
+      theta' = cast theta
+      a      = r' * cos theta'
+      b      = r' * sin theta'
+      z      = a :+ b
+  in  z

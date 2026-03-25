@@ -19,3 +19,7 @@ subtract (a :+ b) (c :+ d) = (a - c) :+ (b - d)
 public export
 normSquared : Num t => Complex t -> t
 normSquared (a :+ b) = (a * a) + (b * b)
+
+public export
+map : (t -> u) -> Complex t -> Complex u
+map f (a :+ b) = f a :+ f b

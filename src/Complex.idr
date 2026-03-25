@@ -15,3 +15,7 @@ add (a :+ b) (c :+ d) = (a + c) :+ (b + d)
 public export
 subtract : Neg t => Complex t -> Complex t -> Complex t
 subtract (a :+ b) (c :+ d) = (a - c) :+ (b - d)
+
+public export
+normSquared : Num t => Complex t -> t
+normSquared (a :+ b) = (a * a) + (b * b)

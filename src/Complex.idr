@@ -31,6 +31,11 @@ public export
 map : (t -> u) -> Complex t -> Complex u
 map f (a :+ b) = f a :+ f b
 
+||| Multiply a `scalar` and  a complex number `z`
+||| in rectangular coordinates `s * (a + b * i) = (s * a) + (s * b * i)`
+scalarMultiply : Num t => t -> Complex t -> Complex t
+scalarMultiply scalar z = map (scalar *) z
+
 ||| Create a `Complex Double` from a radius and angle.
 ||| `r∠θ = r (cos(theta) + i * sin(theta))`
 public export

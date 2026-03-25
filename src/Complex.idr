@@ -12,3 +12,6 @@ public export
 add : Num t => Complex t -> Complex t -> Complex t
 add (a :+ b) (c :+ d) = (a + c) :+ (b + d)
 
+public export
+subtract : Neg t => Complex t -> Complex t -> Complex t
+subtract (a :+ b) (c :+ d) = (a - c) :+ (b - d)

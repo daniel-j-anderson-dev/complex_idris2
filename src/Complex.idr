@@ -39,7 +39,7 @@ scalarMultiply scalar z = map (scalar *) z
 ||| Create a `Complex Double` from a radius and angle.
 ||| `r∠θ = r (cos(theta) + i * sin(theta))`
 public export
-fromPolar : Num t => Cast t Double => t -> t -> Complex Double
+fromPolar : Cast t Double => t -> t -> Complex Double
 fromPolar r theta = 
   let r'     = cast r
       theta' = cast theta

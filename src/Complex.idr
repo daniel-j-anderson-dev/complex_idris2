@@ -37,6 +37,10 @@ public export
 scalarMultiply : Num t => t -> Complex t -> Complex t
 scalarMultiply scalar z = map (scalar *) z
 
+||| The conjugate of a complex number; that is `a + (b * i) = `
+conjugate : Neg t => Complex t -> Complex t
+conjugate (a :+ b) = a :+ (- b)
+
 ||| Create a `Complex Double` from a radius and angle.
 ||| `r∠θ = r (cos(theta) + i * sin(theta))`
 public export

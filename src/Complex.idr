@@ -32,7 +32,7 @@ map : (t -> u) -> Complex t -> Complex u
 map f (a :+ b) = f a :+ f b
 
 ||| Create a `Complex Double` from a radius and angle.
-||| `r∠θ = r (cos(theta) + i * sin (theta))`
+||| `r∠θ = r (cos(theta) + i * sin(theta))`
 public export
 fromPolar : Num t => Cast t Double => t -> t -> Complex Double
 fromPolar r theta = 

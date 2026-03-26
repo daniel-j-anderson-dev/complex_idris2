@@ -26,13 +26,13 @@ normSquared : Num t => Complex t -> t
 normSquared (a :+ b) = (a * a) + (b * b)
 
 ||| Apply `f` to the real component and `g` to the and imaginary component
-||| in rectangular coordinates `mapUniform(f, (a + bi)) = f(a) + f(b)i`
+||| in rectangular coordinates `map(f, g, (a + bi)) = f(a) + g(b)i`
 public export
 map : (t -> u) -> (t -> u) -> Complex t -> Complex u
 map f g (a :+ b) = f a :+ g b
 
 ||| Apply `f` to both the real and imaginary component
-||| in rectangular coordinates `map(f, g, (a + bi)) = f(a) + g(b)i`
+||| in rectangular coordinates `mapUniform(f, (a + bi)) = f(a) + f(b)i`
 public export
 mapUniform : (t -> u) -> Complex t -> Complex u
 mapUniform f = map f f

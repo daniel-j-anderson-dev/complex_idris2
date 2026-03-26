@@ -26,16 +26,16 @@ normSquared : Num t => Complex t -> t
 normSquared (a :+ b) = (a * a) + (b * b)
 
 ||| Apply `f` to both the real and imaginary component
-||| in rectangular coordinates `map(f, (a + bi)) = f(a) + f(b)i`
+||| in rectangular coordinates `mapUniform(f, (a + bi)) = f(a) + f(b)i`
 public export
-map : (t -> u) -> Complex t -> Complex u
-map f (a :+ b) = f a :+ f b
+mapUniform : (t -> u) -> Complex t -> Complex u
+mapUniform f (a :+ b) = f a :+ f b
 
 ||| Multiply a `scalar` and  a complex number `z`
 ||| in rectangular coordinates `s * (a + b * i) = (s * a) + (s * b * i)`
 public export
 scalarMultiply : Num t => t -> Complex t -> Complex t
-scalarMultiply scalar z = map (scalar *) z
+scalarMultiply scalar z = mapUniform (scalar *) z
 
 ||| The conjugate of a complex number; that is `a + (b * i) = `
 public export

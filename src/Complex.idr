@@ -52,3 +52,9 @@ fromPolar r theta =
       b      = r' * sin theta'
       z      = a :+ b
   in  z
+
+real : Complex t -> t
+real (a :+ _) = a
+
+imaginary : Complex t -> t
+imaginary (_ :+ b) = b

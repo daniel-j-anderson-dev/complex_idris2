@@ -37,6 +37,10 @@ public export
 mapUniform : (t -> u) -> Complex t -> Complex u
 mapUniform f = map f f
 
+public export
+Functor Complex where
+  map = mapUniform
+
 ||| Multiply a `scalar` and  a complex number `z`
 ||| in rectangular coordinates `s * (a + b * i) = (s * a) + (s * b * i)`
 public export

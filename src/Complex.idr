@@ -32,7 +32,7 @@ map : (t -> u) -> (t -> u) -> Complex t -> Complex u
 map f g (a :+ b) = f a :+ g b
 
 ||| Apply `f` to both the real and imaginary component
-||| in rectangular coordinates `mapUniform(f, (a + bi)) = f(a) + f(b)i`
+||| in rectangular coordinates `map(f, g, (a + bi)) = f(a) + g(b)i`
 public export
 mapUniform : (t -> u) -> Complex t -> Complex u
 mapUniform f = map f f

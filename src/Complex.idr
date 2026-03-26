@@ -60,3 +60,7 @@ real (a :+ _) = a
 public export
 imaginary : Complex t -> t
 imaginary (_ :+ b) = b
+
+public export
+elementWiseMultiply : Num t => Complex t -> Complex t -> Complex t
+elementWiseMultiply (a :+ b) (c :+ d) = a * c :+ b * d

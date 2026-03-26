@@ -33,7 +33,7 @@ map realF imaginaryF (a :+ b) = realF a :+ imaginaryF b
 ||| in rectangular coordinates `mapUniform(f, (a + bi)) = f(a) + f(b)i`
 public export
 mapUniform : (t -> u) -> Complex t -> Complex u
-mapUniform f (a :+ b) = f a :+ f b
+mapUniform f = map f f
 
 ||| Multiply a `scalar` and  a complex number `z`
 ||| in rectangular coordinates `s * (a + b * i) = (s * a) + (s * b * i)`

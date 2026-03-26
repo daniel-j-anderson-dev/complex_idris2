@@ -25,6 +25,10 @@ public export
 normSquared : Num t => Complex t -> t
 normSquared (a :+ b) = (a * a) + (b * b)
 
+public export
+map : (t -> u) -> (t -> u) -> Complex t -> Complex u
+map realF imaginaryF (a :+ b) = realF a :+ imaginaryF b
+
 ||| Apply `f` to both the real and imaginary component
 ||| in rectangular coordinates `mapUniform(f, (a + bi)) = f(a) + f(b)i`
 public export

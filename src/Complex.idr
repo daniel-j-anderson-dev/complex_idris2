@@ -38,6 +38,7 @@ scalarMultiply : Num t => t -> Complex t -> Complex t
 scalarMultiply scalar z = map (scalar *) z
 
 ||| The conjugate of a complex number; that is `a + (b * i) = `
+public export
 conjugate : Neg t => Complex t -> Complex t
 conjugate (a :+ b) = a :+ (- b)
 

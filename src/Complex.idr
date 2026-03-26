@@ -64,3 +64,9 @@ imaginary (_ :+ b) = b
 public export
 elementWiseMultiply : Num t => Complex t -> Complex t -> Complex t
 elementWiseMultiply (a :+ b) (c :+ d) = a * c :+ b * d
+
+||| `elementWiseDivide numerator denominator`
+public export
+elementWiseDivide : Fractional t => Complex t -> Complex t -> Complex t
+elementWiseDivide (a :+ b) (c :+ d) = a / c :+ b / d
+

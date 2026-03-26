@@ -53,8 +53,10 @@ fromPolar r theta =
       z      = a :+ b
   in  z
 
+public export
 real : Complex t -> t
 real (a :+ _) = a
 
+public export
 imaginary : Complex t -> t
 imaginary (_ :+ b) = b

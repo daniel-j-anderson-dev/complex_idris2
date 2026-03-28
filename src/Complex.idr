@@ -47,7 +47,7 @@ public export
 scalarMultiply : Num t => t -> Complex t -> Complex t
 scalarMultiply scalar z = map (scalar *) z
 
-||| The conjugate of a complex number; that is `a + (b * i) = `
+||| The conjugate of a complex number; that is `a + (b * i) = a + (-b * i)`
 public export
 conjugate : Neg t => Complex t -> Complex t
 conjugate (a :+ b) = a :+ (- b)
@@ -81,3 +81,5 @@ public export
 elementWiseDivide : Fractional t => Complex t -> Complex t -> Complex t
 elementWiseDivide (a :+ b) (c :+ d) = a / c :+ b / d
 
+multiply : Neg t => Complex t -> Complex t -> Complex t
+multiply (a :+ b) (c :+ d) = (a * c - b * d) :+ (a * d + b * c)

@@ -81,5 +81,6 @@ public export
 elementWiseDivide : Fractional t => Complex t -> Complex t -> Complex t
 elementWiseDivide (a :+ b) (c :+ d) = a / c :+ b / d
 
+public export
 multiply : Neg t => Complex t -> Complex t -> Complex t
 multiply (a :+ b) (c :+ d) = (a * c - b * d) :+ (a * d + b * c)

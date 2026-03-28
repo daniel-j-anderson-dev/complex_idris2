@@ -91,3 +91,6 @@ elementWiseDivide (a :+ b) (c :+ d) = a / c :+ b / d
 public export
 multiply : Neg t => Complex t -> Complex t -> Complex t
 multiply (a :+ b) (c :+ d) = (a * c - b * d) :+ (a * d + b * c)
+
+Cast t u => Cast (Complex t) (Complex u) where
+  cast = Complex.map cast

@@ -8,6 +8,13 @@ data Complex : Type -> Type where
 
 public export infixl 6 :+
 
+public export
+fromPair : (t, t) -> Complex t
+fromPair (a, b) = a :+ b
+
+Cast (t, t) (Complex t) where
+ cast = fromPair
+
 ||| Add two complex numbers. in rectangular coordinates `(a + bi) + (c + di) = (a + c) + (b + d)i`
 public export
 add : Num t => Complex t -> Complex t -> Complex t
